@@ -45,3 +45,8 @@ let paragraph = document.getElementById("myParagraph");
 let textContent = paragraph.textContent || paragraph.innerText;
 // console.log(textContent);
 createWordCloud(textContent);
+
+
+
+
+
