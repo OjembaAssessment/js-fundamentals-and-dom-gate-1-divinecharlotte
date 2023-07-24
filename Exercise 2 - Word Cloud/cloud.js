@@ -7,20 +7,20 @@ function createWordCloud(str) {
     for (let i = 0; i < words.length; i++) {
         wordCounts["_" + words[i]] = (wordCounts["_" + words[i]] || 0) + 1;
     }
-        delete wordCounts[""];
+    delete wordCounts[""];
     delete wordCounts["_ "];
     delete wordCounts["_."];
     delete wordCounts[","];
     delete wordCounts["."];
     delete wordCounts["_\n"];
-    var sortedWords = Object.keys(wordCounts).sort(function(a, b) {
+    var sortedWords = Object.keys(wordCounts).sort(function (a, b) {
         return wordCounts[b] - wordCounts[a];
     });
 
-   
+
     var first12Words = sortedWords.slice(0, 12);
 
-   
+
 
 
 
@@ -37,11 +37,11 @@ function createWordCloud(str) {
 
 
     let myWordCloudContainer = document.getElementById("myWordCloud");
-   myWordCloudContainer.innerHTML = wordCloudHTML;
+    myWordCloudContainer.innerHTML = wordCloudHTML;
 }
 
 
 let paragraph = document.getElementById("myParagraph");
 let textContent = paragraph.textContent || paragraph.innerText;
-console.log(textContent);
+// console.log(textContent);
 createWordCloud(textContent);
